@@ -18,8 +18,6 @@ public class HelloServerInitialzer extends ChannelInitializer<SocketChannel> {
 		//添加handler
 		pipeline.addLast("HttpServerCodec", new HttpServerCodec())
 				//添加自定义handler
-				.addLast("customHandler", null);
-
-
+				.addLast("customHandler", new CustomHandler());
 	}
 }
